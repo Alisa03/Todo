@@ -6,10 +6,10 @@ import ListTodo from "../TodoList"
 import AddTodo from "../AddTodo"
 
 export default function Todo() {
-    const [todo, setTodo] = useState<any[]>(JSON.parse(String(localStorage.getItem('todo'))) || []);
+    const [todo, setTodo] = useState<any[]>(JSON.parse(String(sessionStorage.getItem('todo'))) || []);
 
     useEffect(() => {
-        window.localStorage.setItem('todo', JSON.stringify(todo));
+        window.sessionStorage.setItem('todo', JSON.stringify(todo));
     }, [todo]);
 
     return (
