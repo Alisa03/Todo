@@ -139,7 +139,7 @@ Error generating stack: `+o.message+`
     width: 100%;
     color: ${e=>e.theme.textColor};
     font: 400 .8rem/1 ${gt.font.textFonts}
-`;function Qm({todo:e,setTodo:t}){const[n,r]=pe.useState(""),l=i=>{i.key=="Enter"&&o()},o=()=>{if(n!==""){const i={id:Date.now(),title:n,checked:!1};t([...e,i]),r("")}};return K.jsxs(Hm,{children:[K.jsx(Wm,{type:"text",placeholder:"Add to-do",value:n,onChange:i=>{r(i.target.value)},onKeyPress:l}),K.jsx(fs,{onClick:o,children:"+"})]})}function Ym(){const[e,t]=pe.useState(JSON.parse(String(localStorage.getItem("todo")))||[]);return pe.useEffect(()=>{window.localStorage.setItem("todo",JSON.stringify(e))},[e]),K.jsx("main",{children:K.jsxs(ld,{children:[K.jsx(Qm,{setTodo:t,todo:e}),e.length>0&&K.jsxs(od,{children:[K.jsx(Oa,{setTodo:t,title:"To-do",list:e,bool:!1}),K.jsx(Oa,{setTodo:t,title:"Completed",list:e,bool:!0})]})]})})}const Km=rt(ld)`
+`;function Qm({todo:e,setTodo:t}){const[n,r]=pe.useState(""),l=i=>{i.key=="Enter"&&o()},o=()=>{if(n!==""){const i={id:Date.now(),title:n,checked:!1};t([...e,i]),r("")}};return K.jsxs(Hm,{children:[K.jsx(Wm,{type:"text",placeholder:"Add to-do",value:n,onChange:i=>{r(i.target.value)},onKeyPress:l}),K.jsx(fs,{onClick:o,children:"+"})]})}function Ym(){const[e,t]=pe.useState(JSON.parse(String(sessionStorage.getItem("todo")))||[]);return pe.useEffect(()=>{window.sessionStorage.setItem("todo",JSON.stringify(e))},[e]),K.jsx("main",{children:K.jsxs(ld,{children:[K.jsx(Qm,{setTodo:t,todo:e}),e.length>0&&K.jsxs(od,{children:[K.jsx(Oa,{setTodo:t,title:"To-do",list:e,bool:!1}),K.jsx(Oa,{setTodo:t,title:"Completed",list:e,bool:!0})]})]})})}const Km=rt(ld)`
     padding: 10px 0
 `,Gm=rt.nav`
     background: ${e=>e.theme.blockColor};
